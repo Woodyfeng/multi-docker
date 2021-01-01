@@ -7,7 +7,7 @@ before install:
   - docker build -t x35feng/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true USERNAME/react-test npm test
+  - docker run -e CI=true x35feng/react-test npm test
 
 after_success:
   - docker build -t x35feng/multi-client ./client
@@ -24,7 +24,7 @@ after_success:
   - docker push x35feng/multi-server
   - docker push x35feng/multi-worker
 
-  
+
 
 
 
